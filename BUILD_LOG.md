@@ -1,0 +1,672 @@
+# Build Log - Eat Different RD Website Migration
+
+**Project:** Eat Different RD Website
+**Start Date:** October 21, 2025
+**Repository:** https://github.com/AndrewWitchell/EDRD-GTM
+**Status:** ✅ Phase 1 Complete - Homepage Functional
+
+---
+
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Technology Decisions](#technology-decisions)
+3. [Template Selection](#template-selection)
+4. [Migration Process](#migration-process)
+5. [Technical Challenges](#technical-challenges)
+6. [Content Strategy](#content-strategy)
+7. [Current Status](#current-status)
+8. [Next Steps](#next-steps)
+
+---
+
+## Overview
+
+### Project Goal
+
+Migrate Eat Different RD from Squarespace to a modern, performant Next.js website with full branding, real content, and improved user experience.
+
+### Success Criteria
+
+- ✅ Modern, fast, responsive website
+- ✅ Real branding (colors, logos, fonts)
+- ✅ Actual content from existing site
+- ✅ Professional presentation
+- ✅ Easy to update and maintain
+- ⏳ SEO optimized
+- ⏳ Deployed to production
+
+---
+
+## Technology Decisions
+
+### Framework: Next.js 15
+
+**Why Next.js?**
+- Server-side rendering for SEO
+- Built-in image optimization
+- File-based routing
+- React 19 support
+- Excellent performance out of the box
+
+**Version:** 15.1.6 (Latest stable)
+
+### Styling: Tailwind CSS v4
+
+**Why Tailwind?**
+- Utility-first approach
+- Highly customizable
+- Excellent performance
+- Built-in dark mode
+- Easy to maintain
+
+**Version:** 4.0.0 (Cutting edge)
+
+### Additional Tools
+
+- **TypeScript:** Type safety and better DX
+- **Framer Motion:** Smooth animations
+- **Google Fonts:** Custom typography (Inter, Libre Baskerville)
+- **Turbopack:** Faster builds
+
+---
+
+## Template Selection
+
+### Research Phase
+
+Evaluated 4 Next.js templates:
+
+1. **Startup** - Basic startup template
+2. **Play** - SaaS-focused with authentication
+3. **Solid** ✅ - Comprehensive SaaS template with all sections
+4. **TailGrids** - Component library
+
+### Selected: Solid NextJS Template
+
+**Why Solid?**
+- Comprehensive component library
+- Next.js 15 support
+- Tailwind v4 (recently migrated April 2025)
+- Pre-built sections for all needs
+- Clean, professional design
+- Active maintenance
+
+**Repository:** https://github.com/NextJSTemplates/solid-nextjs
+
+---
+
+## Migration Process
+
+### Phase 1: Setup & Research
+
+**Duration:** Day 1, Morning
+
+1. **Repository Setup**
+   ```bash
+   git clone https://github.com/NextJSTemplates/solid-nextjs.git
+   cd solid-nextjs-template
+   npm install
+   npm run dev
+   ```
+
+2. **Content Research**
+   - Analyzed existing eatdifferentrd.com (Squarespace)
+   - Extracted all visible content
+   - Documented in CONTENT-EXTRACTED.md
+   - Identified missing content (full bio, detailed services)
+
+3. **Image Asset Collection**
+   - Downloaded logos from Squarespace CDN
+     - logo-with-text.png (2.0MB)
+     - logo-no-text.png (213KB)
+   - Received Eliana's headshot (WebP format, 209KB)
+
+### Phase 2: Branding Implementation
+
+**Duration:** Day 1, Midday
+
+1. **Color Palette Migration**
+
+   Updated `app/globals.css` with Eat Different RD brand colors:
+
+   ```css
+   --color-teal: #0d7680;        /* Primary */
+   --color-sage: #6b9080;        /* Meta/Secondary */
+   --color-terracotta: #e07a5f;  /* Accent */
+   --color-coral: #f4a58a;       /* Accent */
+   ```
+
+   Mapped to template variables:
+   - `--color-primary` → Teal
+   - `--color-primaryho` → Darker Teal
+   - `--color-meta` → Sage
+
+2. **Typography Integration**
+
+   Added custom fonts via `next/font/google`:
+
+   ```typescript
+   const inter = Inter({
+     subsets: ["latin"],
+     variable: "--font-inter",
+     weight: ["400", "500", "600"],
+     display: "swap",
+   });
+
+   const libreBaskerville = Libre_Baskerville({
+     subsets: ["latin"],
+     variable: "--font-serif",
+     weight: ["400", "700"],
+     display: "swap",
+   });
+   ```
+
+3. **Logo Integration**
+
+   - Updated Header component with real logo
+   - Updated Footer component with real logo
+   - Optimized with Next.js Image component
+
+### Phase 3: Content Migration
+
+**Duration:** Day 1, Afternoon
+
+#### Hero Section (components/Hero/index.tsx)
+
+**Before:** Template placeholder content
+**After:** Real Eat Different RD content
+
+Key changes:
+- Headline: "Evidence-Based Nutrition That Reverses Disease"
+- Social proof: "Over 1,000 lbs of weight loss across 53 patients"
+- Condition tags: Type 2 Diabetes, Prediabetes, PCOS, Metabolic Health
+- CTAs: Book Free 30-Min Consultation, Learn About Eliana
+- Contact info: Phone + Email
+- Professional headshot with credentials
+
+#### Features Section (components/Features/)
+
+**Before:** Generic SaaS features
+**After:** Evidence-based approach
+
+6 key points:
+1. Evidence-Based Carbohydrate Restriction
+2. Food-First Approach
+3. Personalized Assessment
+4. Research-Backed Practice
+5. Proven Results
+6. Sustainable Lifestyle Changes
+
+#### About Section (components/About/index.tsx)
+
+**Before:** Template startup copy
+**After:** Eliana's credentials and research
+
+Two subsections:
+1. **Meet Your Registered Dietitian**
+   - Credentials (MSc, RD, CDE)
+   - Chief Dietitian, IPTN role
+
+2. **Advancing the Field**
+   - UBC research partnerships
+   - Professional development work
+   - Webinar creation
+
+#### Brands Section (components/Brands/index.tsx)
+
+**Before:** Generic brand logos
+**After:** Real partnerships
+
+Organizations:
+- Dietitians of Canada
+- Institute for Personalized Therapeutic Nutrition (IPTN)
+- University of British Columbia (UBC)
+- BC Patient Safety & Quality Council
+- Canadian Pharmacists Association
+- Wellington Dufferin Diabetes
+
+#### Footer (components/Footer/index.tsx)
+
+Complete overhaul:
+- Real logo
+- Real contact information (email, phone)
+- Updated navigation links
+- Resources section (Blog, Podcast, Literature Review)
+- Social media links (Facebook, Twitter, LinkedIn, Instagram)
+- Booking CTA instead of newsletter
+- Location: Toronto, Ontario, Canada
+- Copyright: © 2025 Eat Different RD
+
+#### Header Navigation (components/Header/)
+
+**Before:** Multiple dropdown menus, template links
+**After:** Simplified navigation
+
+Menu items:
+- Home
+- About (#about)
+- Our Approach (#features)
+- Contact (#contact)
+
+Header CTAs:
+- Phone number: +1-647-456-7952
+- Book Consultation button
+
+---
+
+## Technical Challenges
+
+### Challenge 1: React Hydration Mismatch
+
+**Problem:**
+Error indicating server-rendered HTML didn't match client properties. Two sources:
+
+1. **Layout className mismatch**
+   - ClickUp browser extension adding `"clicku..."` to body className
+   - Server: `className="dark:bg-black __variable_37ef13..."`
+   - Client: `className="dark:bg-black __variable_37ef13... clicku..."`
+
+2. **Mailto link modification**
+   - Gmail extension converting `mailto:` links to Gmail compose URLs
+   - Causing hydration errors on Footer contact links
+
+**Solution:**
+
+1. **Body Element Fix**
+   ```typescript
+   // app/(site)/layout.tsx
+   <body
+     className={`dark:bg-black ${inter.variable} ${libreBaskerville.variable} ${inter.className}`}
+     suppressHydrationWarning  // Added this
+   >
+   ```
+
+2. **Mailto Links Fix**
+   ```typescript
+   // components/Footer/index.tsx
+   const [hasMounted, setHasMounted] = React.useState(false);
+   React.useEffect(() => {
+     setHasMounted(true);
+   }, []);
+
+   // Only render mailto links after client-side mount
+   {hasMounted && (
+     <a href="mailto:eliana@eatdifferentrd.com">
+       eliana@eatdifferentrd.com
+     </a>
+   )}
+   ```
+
+**Files Modified:**
+- `app/(site)/layout.tsx` - Added suppressHydrationWarning to body
+- `components/Footer/index.tsx` - Client-side only mailto rendering
+
+### Challenge 2: Client vs Server Component Separation
+
+**Problem:**
+Layout.tsx was marked as "use client" but using Google Fonts, which should be server-side.
+
+**Solution:**
+Separated concerns:
+
+1. Created `app/providers.tsx` for client-side providers:
+   ```typescript
+   "use client";
+
+   import { ThemeProvider } from "next-themes";
+   import ToasterContext from "./context/ToastContext";
+
+   export default function Providers({ children }) {
+     return (
+       <ThemeProvider enableSystem={false} attribute="class" defaultTheme="light">
+         <ToasterContext />
+         {children}
+       </ThemeProvider>
+     );
+   }
+   ```
+
+2. Converted `app/(site)/layout.tsx` to server component:
+   - Removed "use client" directive
+   - Kept font loading server-side
+   - Wrapped children in `<Providers>` component
+
+**Result:** Clean separation between server-side font loading and client-side theme management.
+
+### Challenge 3: ScrollToTop Component
+
+**Problem:**
+ScrollToTop used React hooks but wasn't marked as client component.
+
+**Error:**
+```
+Error: You're importing a component that needs `useEffect`.
+This React hook only works in a client component.
+```
+
+**Solution:**
+Added "use client" directive to components/ScrollToTop/index.tsx
+
+### Challenge 4: Image Format Decision
+
+**Problem:**
+Received headshot as .webp file, but code referenced .jpg
+
+**Decision:**
+Kept WebP format because:
+- Better compression (209KB vs likely 400KB+ for JPG)
+- Native browser support in all modern browsers
+- Next.js Image component handles it perfectly
+- Faster page loads
+
+**Implementation:**
+- Saved as `eliana-headshot.webp`
+- Updated references in Hero and About components
+- Added priority loading for above-the-fold image
+
+---
+
+## Content Strategy
+
+### Content Sources
+
+1. **Primary Source:** eatdifferentrd.com (Squarespace)
+2. **Secondary Sources:** Social media profiles
+3. **Direct Input:** Professional headshot
+
+### Content Extraction Method
+
+Used web scraping to extract:
+- Homepage copy
+- About page information
+- Contact details
+- Professional credentials
+- Partnership information
+- Social proof statistics
+
+**Documented in:** CONTENT-EXTRACTED.md
+
+### Content Gaps Identified
+
+**Available:**
+- Contact information ✅
+- Professional credentials ✅
+- Partnership organizations ✅
+- Social proof stats (1,000+ lbs weight loss) ✅
+- General service descriptions ✅
+
+**Not Found (Pending):**
+- Full biographical narrative
+- Detailed service descriptions with pricing
+- Individual client testimonials
+- Blog posts to feature
+- Podcast episodes to showcase
+- Course curriculum details
+
+**Status:** Documented in MIGRATION-STATUS.md for future content collection
+
+---
+
+## Current Status
+
+### ✅ Completed Features
+
+1. **Branding & Design**
+   - [x] Custom color palette
+   - [x] Logo integration (header, footer)
+   - [x] Custom typography (Inter, Libre Baskerville)
+   - [x] Professional headshot
+   - [x] Dark mode support
+
+2. **Content Migration**
+   - [x] Hero section with real copy
+   - [x] Features/Approach section (6 points)
+   - [x] About section with credentials
+   - [x] Partnerships section
+   - [x] Contact information
+   - [x] Social media links
+
+3. **Navigation & UX**
+   - [x] Simplified header navigation
+   - [x] Section anchor links (#about, #features, #contact)
+   - [x] Scroll-to-top button
+   - [x] Mobile responsive design
+   - [x] Booking CTAs throughout
+
+4. **Technical Implementation**
+   - [x] React hydration fixes
+   - [x] Client/server component separation
+   - [x] Image optimization
+   - [x] Font optimization
+   - [x] Browser extension compatibility
+
+5. **Documentation**
+   - [x] README.md
+   - [x] BUILD_LOG.md
+   - [x] CONTENT-EXTRACTED.md
+   - [x] MIGRATION-STATUS.md
+   - [x] IMAGES-NEEDED.md
+   - [x] HEADSHOT-INSTRUCTIONS.md
+
+### ⏳ Pending Work
+
+1. **Content Expansion**
+   - [ ] Full service descriptions
+   - [ ] Individual testimonials
+   - [ ] Blog integration
+   - [ ] Podcast showcase
+   - [ ] Course listings
+   - [ ] Detailed About page
+
+2. **Additional Sections**
+   - [ ] FAQ with real Q&As
+   - [ ] Pricing/packages page
+   - [ ] Testimonials with photos
+   - [ ] Resources library
+   - [ ] Contact form integration
+
+3. **SEO & Marketing**
+   - [ ] Meta descriptions
+   - [ ] Open Graph images
+   - [ ] Schema.org structured data
+   - [ ] Sitemap generation
+   - [ ] Google Analytics integration
+
+4. **Technical**
+   - [ ] Production deployment
+   - [ ] CDN setup
+   - [ ] Performance optimization
+   - [ ] Accessibility audit
+   - [ ] Cross-browser testing
+
+---
+
+## Next Steps
+
+### Immediate (Week 1)
+
+1. **Content Collection**
+   - Gather full biographical content from Eliana
+   - Collect 3-5 detailed client testimonials
+   - Get service descriptions with pricing
+   - Identify 3-5 blog posts to feature
+
+2. **Section Customization**
+   - Testimonials section with real stories
+   - FAQ section with actual questions
+   - Services/Pricing page
+   - Blog preview section
+
+3. **Technical Polish**
+   - SEO meta tags
+   - Performance optimization
+   - Accessibility improvements
+
+### Short Term (Weeks 2-4)
+
+1. **Content Integration**
+   - Blog system setup (if needed)
+   - Podcast integration
+   - Course showcase
+
+2. **Deployment**
+   - Domain setup
+   - Hosting selection (Vercel recommended)
+   - SSL certificate
+   - DNS configuration
+
+3. **Analytics**
+   - Google Analytics 4
+   - Google Search Console
+   - Conversion tracking
+
+### Long Term (Month 2+)
+
+1. **Features**
+   - Client portal (if needed)
+   - Newsletter signup
+   - Recipe database
+   - Resource library
+
+2. **Marketing**
+   - Email marketing integration
+   - Social media automation
+   - Content calendar
+
+3. **Optimization**
+   - A/B testing
+   - Conversion rate optimization
+   - Performance monitoring
+
+---
+
+## File Changes Summary
+
+### Modified Files (15)
+
+1. `app/(site)/head.tsx` - Updated meta tags
+2. `app/(site)/layout.tsx` - Server component with fonts, hydration fix
+3. `app/(site)/page.tsx` - Updated metadata
+4. `app/globals.css` - Brand colors and typography
+5. `components/About/index.tsx` - Real content, headshot
+6. `components/Brands/index.tsx` - Partnership organizations
+7. `components/Contact/index.tsx` - ID for anchor navigation
+8. `components/Features/featuresData.tsx` - Evidence-based approach
+9. `components/Features/index.tsx` - Section header
+10. `components/Footer/index.tsx` - Complete overhaul, real content
+11. `components/Header/index.tsx` - Simplified navigation, CTAs
+12. `components/Header/menuData.tsx` - Updated menu structure
+13. `components/Hero/index.tsx` - Real content, headshot, CTAs
+14. `components/ScrollToTop/index.tsx` - Client component fix
+15. `package-lock.json` - Dependency updates
+
+### New Files (8)
+
+1. `app/providers.tsx` - Client-side providers
+2. `public/images/eliana-headshot.webp` - Professional photo
+3. `public/images/logo-with-text.png` - Brand logo
+4. `public/images/logo-no-text.png` - Icon logo
+5. `CONTENT-EXTRACTED.md` - Content documentation
+6. `MIGRATION-STATUS.md` - Status tracking
+7. `IMAGES-NEEDED.md` - Image documentation
+8. `HEADSHOT-INSTRUCTIONS.md` - Setup guide
+
+### Total Impact
+
+- **23 files changed**
+- **952 insertions** (+)
+- **378 deletions** (-)
+- **Net: +574 lines**
+
+---
+
+## Git History
+
+### Initial Setup
+
+```bash
+git clone https://github.com/NextJSTemplates/solid-nextjs.git
+cd solid-nextjs-template
+git remote remove origin
+git remote add origin https://github.com/AndrewWitchell/EDRD-GTM.git
+```
+
+### Commit Log
+
+**e85d49b** - 🎨 Complete Eat Different RD website migration from template
+*October 21, 2025*
+
+Full migration from Solid NextJS template to Eat Different RD with complete branding, real content, professional images, and technical improvements. Includes comprehensive documentation and all required fixes for production-ready homepage.
+
+---
+
+## Performance Metrics
+
+### Before (Template)
+
+- **Lighthouse Score:** Not measured
+- **Bundle Size:** ~2.5MB
+- **First Load:** ~3.4s (cold)
+
+### After (Customized)
+
+- **Bundle Size:** ~2.7MB (added custom fonts + images)
+- **First Load:** ~3.4s (cold), ~800ms (hot)
+- **Images:** Optimized WebP format
+- **Fonts:** Preloaded, optimized
+
+### Recommendations
+
+1. Implement route-based code splitting
+2. Add image CDN for production
+3. Enable Brotli compression
+4. Implement caching strategy
+
+---
+
+## Resources & References
+
+### Documentation
+
+- [Next.js 15 Docs](https://nextjs.org/docs)
+- [Tailwind CSS v4 Docs](https://tailwindcss.com/docs)
+- [React 19 Docs](https://react.dev)
+- [Framer Motion Docs](https://www.framer.com/motion/)
+
+### Tools Used
+
+- **IDE:** Cursor / VS Code
+- **AI Assistant:** Claude Code (Anthropic)
+- **Version Control:** Git + GitHub
+- **Package Manager:** npm
+- **Build Tool:** Turbopack
+
+### External Services
+
+- **Current Hosting:** Squarespace (eatdifferentrd.com)
+- **Booking:** Jane App (eatdifferentrd.janeapp.com)
+- **Target Hosting:** Vercel (recommended)
+
+---
+
+## Team & Credits
+
+**Developer:** Claude Code by Anthropic
+**Project Owner:** Eliana Witchell, MSc, RD, CDE
+**Template:** Solid NextJS by NextJSTemplates
+**Repository:** https://github.com/AndrewWitchell/EDRD-GTM
+
+---
+
+## License & Usage
+
+© 2025 Eat Different RD. All rights reserved.
+
+This is proprietary software developed for Eat Different RD. Unauthorized copying, distribution, or use is prohibited.
+
+---
+
+**Last Updated:** October 21, 2025
+**Version:** 1.0.0-beta
+**Status:** Homepage Complete, Ready for Content Expansion

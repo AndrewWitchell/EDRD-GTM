@@ -1,91 +1,128 @@
-# Solid - Free Next.js Web Template and Starter Kit for SaaS
+# Eat Different RD - Metabolic Health & Nutrition Therapy Website
 
-Solid is a free Next.js template specifically crafted for startups, SaaS, and software websites. It provides an extensive array of necessary sections, elements, and pages required to build a fully-equipped website for any SaaS, software, or startup site. Comes with all cutting edge React and Next.js features - **Built with Next.js 13, React 18 and TypeScript.**
+Evidence-based nutrition therapy website for Eliana Witchell, MSc, RD, CDE - Chief Dietitian at the Institute for Personalized Therapeutic Nutrition.
 
-This Next.js template's homepage comes with an awesome hero area, logos of associated brands, a features section, an about section, another features section with tabs, counters, and star ratings, integration options, clear call-to-actions, an FAQ section with accordions, a testimonials section, pricing tables, a contact page, a blog, and a distinctive footer.
+## About
 
-**Solid Next.js template packed with all necessary external pages** - such as login, registration, blog grids, and single blog pages, among others. This broad collection of pages provides all the necessary tools to create a feature-packed, comprehensive, and visually appealing website or landing page for software, a web application, or SaaS.
+This website provides information about personalized nutrition therapy services for Type 2 Diabetes, Prediabetes, PCOS, and metabolic health. Built with Next.js 15, React 19, and Tailwind CSS v4.
 
-### [🔥 Get Solid Pro - Next.js SaaS Boilerplate and Starter Kit](https://nextjstemplates.com/templates/solid)
+## Live Demo
 
-### [🚀 Solid PRO Live Demo](https://solid.nextjstemplates.com/)
+- **Development:** http://localhost:3001
+- **Production:** [To be deployed]
 
-### [🚀 Solid FREE Live Demo](https://solid-free.nextjstemplates.com/)
+## Tech Stack
 
-### Solid PRO vs Solid FREE Comparison 📊
-
-#### [Solid PRO](https://solid.nextjstemplates.com/)
-- SaaS Boilerplate + Starter Kit with Essential Integrations and Functionalities
-- Essential Integrations: Auth, DB, Stripe, MDX and More ...
-- Fully Functional, Ready to Use Sanity Blog Support
-- Premium Email Support
-- Functional External Pages
-- Free Lifetime Future Updates
-___
-#### [Solid FREE](https://solid-free.nextjstemplates.com/)
-- Only UI - Coded for Next.js
-- No Integrations
-- No Functional Blogging System
-- External Pages without Functions/Integrations
-- Community Support
-- Free Lifetime Future Updates
-___
-
-### [📦 Download](https://nextjstemplates.com/templates/solid)
-
-### [🔥 Get Pro](https://nextjstemplates.com/templates/solid)
-
-### [🔌 Documentation](https://nextjstemplates.com/docs)
-
-### ⚡ Deploy Now
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FNextJSTemplates%2Fsolid-nextjs)
-
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/NextJSTemplates/solid-nextjs)
-
+- **Framework:** Next.js 15.1.6
+- **UI Library:** React 19
+- **Styling:** Tailwind CSS v4
+- **Fonts:** Inter, Libre Baskerville (Google Fonts)
+- **Build Tool:** Turbopack
+- **Language:** TypeScript
+- **Animations:** Framer Motion
 
 ## Installation
 
-Here are the steps you need to follow to install the dependencies.
+### Prerequisites
 
-1.Download and extract the template from **Next.js Templates.**
+- Node.js 18+ and npm
 
-2.**cd** into the template directory then run this command to install all the dependencies
-    
+### Setup
+
 ```bash
-    npm install --legacy-peer-deps
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
-**Note:** As of right now React 19 causes peer dependencies issues with some packages, so the `legacy-peer-deps` flag is required.
 
-You can start the project on the local server
-    
-```bash
-    npm run dev
- ```
+The site will be available at http://localhost:3001
 
-It’ll start the template on [localhost:3000](http://localhost:3000). 
+## Project Structure
 
-The documentation includes all the guides you need for the integrations. 
+```
+├── app/                    # Next.js app directory
+│   ├── (site)/            # Main site pages
+│   ├── globals.css        # Global styles with brand colors
+│   └── providers.tsx      # Client-side providers
+├── components/            # React components
+│   ├── Hero/             # Homepage hero section
+│   ├── About/            # About Eliana section
+│   ├── Features/         # Evidence-based approach
+│   ├── Footer/           # Site footer
+│   └── Header/           # Navigation header
+├── public/
+│   └── images/           # Brand assets
+│       ├── logo-with-text.png
+│       ├── logo-no-text.png
+│       └── eliana-headshot.webp
+└── types/                # TypeScript definitions
+```
 
+## Features
 
-### Deploying on PaaS
+### Completed
 
-If you are using a GitHub repo then you can go with free-of-cost and easy-to-use options like [Vercel](https://vercel.com/), or [Netlify](https://netlify.com/) they offer decent-free tiers for Next.js hosting.
+- ✅ Custom branding with Eat Different RD colors and logos
+- ✅ Real content from existing eatdifferentrd.com website
+- ✅ Professional headshot integration
+- ✅ Evidence-based approach showcase (6 key points)
+- ✅ Eliana's credentials and research partnerships
+- ✅ Contact information and booking CTAs
+- ✅ Social media integration
+- ✅ Responsive design for all devices
+- ✅ Dark mode support
+- ✅ Hydration error fixes for browser extensions
 
-### 📄 License
-Solid Free is 100% free and open-source, feel free to use with your personal and commercial projects.
+### Pending
 
-### 💜 Support
-If you like the template, please star this repository to inspire the team to create more stuff like this and reach more users like you!
+- ⏳ Full service descriptions with pricing
+- ⏳ Individual client testimonials
+- ⏳ Blog integration
+- ⏳ Podcast showcase
+- ⏳ Literature review section
+- ⏳ Online course listings
+- ⏳ Deployment to production
 
-### ✨ Browse and Download - Best Free [Next.js Templates](https://nextjstemplates.com/templates)
+## Brand Colors
 
-### Update Log
+```css
+--color-teal: #0d7680;        /* Primary brand color */
+--color-sage: #6b9080;        /* Secondary/Meta color */
+--color-terracotta: #e07a5f;  /* Accent color */
+--color-coral: #f4a58a;       /* Accent color */
+```
 
-**10 April 2025**
-- Update eslint to v9.24.0 to resolve peer deps warning during installation.
-- Migrate to tailwind v4
+## Documentation
 
-**29 Jan 2025**
-- Upgraded to Next.js 15
-- Update framer-motion to v12.0.6 for React 19 support.
+- [Content Extraction](./CONTENT-EXTRACTED.md) - All content from existing website
+- [Migration Status](./MIGRATION-STATUS.md) - Completed vs pending work
+- [Images Needed](./IMAGES-NEEDED.md) - Image asset documentation
+- [Build Log](./BUILD_LOG.md) - Development history and decisions
+
+## Contact & Social
+
+- **Website:** https://eatdifferentrd.com
+- **Email:** eliana@eatdifferentrd.com
+- **Phone:** +1-647-456-7952
+- **Booking:** https://eatdifferentrd.janeapp.com
+- **Instagram:** @eatdifferentrd
+- **Twitter:** @eatdifferentrd
+- **LinkedIn:** Eliana Witchell, MSc, RD
+- **Facebook:** eliana.witchell
+
+## License
+
+© 2025 Eat Different RD. All rights reserved.
+
+## Credits
+
+Built with Claude Code by Anthropic
+Template: Solid NextJS by NextJSTemplates
