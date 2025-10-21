@@ -4,44 +4,44 @@ const featuresData: Feature[] = [
   {
     id: 1,
     icon: "/images/icon/icon-01.svg",
-    title: "Crafted for SaaS",
+    title: "Evidence-Based Carbohydrate Restriction",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
+      "Scientifically-proven approach to managing Type 2 Diabetes, Prediabetes, and PCOS through strategic carbohydrate reduction backed by peer-reviewed research.",
   },
   {
     id: 2,
     icon: "/images/icon/icon-02.svg",
-    title: "High-quality Design",
+    title: "Food-First Approach",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
+      "Reverse or put chronic disease into remission through nutrition therapy - not pharmaceutical interventions. Real food, real results.",
   },
   {
     id: 3,
     icon: "/images/icon/icon-03.svg",
-    title: "Next.js 13 + TypeScript",
+    title: "Personalized Assessment",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
+      "Every patient receives individual evaluation based on medical history, current medications, lifestyle habits, and personal health goals.",
   },
   {
     id: 4,
     icon: "/images/icon/icon-04.svg",
-    title: "Sanity Blog and Docs",
+    title: "Research-Backed Practice",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
+      "Partnered with UBC to develop research on carbohydrate-reduced diets. Education grounded in evidence, not fad diets or trends.",
   },
   {
     id: 5,
     icon: "/images/icon/icon-05.svg",
-    title: "DB, Auth and Stripe",
+    title: "Proven Results",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
+      "Over 1,000 lbs of weight loss across 53 patients. Results-oriented approach with measurable health improvements and sustainable outcomes.",
   },
   {
     id: 6,
     icon: "/images/icon/icon-06.svg",
-    title: "Regular Free Updates",
+    title: "Sustainable Lifestyle Changes",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
+      "Find the most sustainable way of eating - not a restrictive diet! Build resilience and lasting health habits that fit your life.",
   },
 ];
 

@@ -1,15 +1,24 @@
-"use client";
-
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Lines from "@/components/Lines";
 import ScrollToTop from "@/components/ScrollToTop";
-import { ThemeProvider } from "next-themes";
-import { Inter } from "next/font/google";
+import { Inter, Libre_Baskerville } from "next/font/google";
 import "../globals.css";
-const inter = Inter({ subsets: ["latin"] });
+import Providers from "../providers";
 
-import ToasterContext from "../context/ToastContext";
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  weight: ["400", "700"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -18,19 +27,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-black ${inter.className}`}>
-        <ThemeProvider
-          enableSystem={false}
-          attribute="class"
-          defaultTheme="light"
-        >
+      <body
+        className={`dark:bg-black ${inter.variable} ${libreBaskerville.variable} ${inter.className}`}
+        suppressHydrationWarning
+      >
+        <Providers>
           <Lines />
           <Header />
-          <ToasterContext />
           {children}
           <Footer />
           <ScrollToTop />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

@@ -14,10 +14,8 @@ import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
 
 export const metadata: Metadata = {
-  title: "Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate",
-
-  // other metadata
-  description: "This is Home for Solid Pro"
+  title: "Eat Different RD - Metabolic Health & Nutrition Therapy",
+  description: "Evidence-based metabolic health support from Registered Dietitian Eliana Witchell, MSc, RD, CDE. Specialized nutrition therapy for Type 2 Diabetes, Prediabetes, PCOS, and GLP-1 medication support.",
 };
 
 export default function Home() {

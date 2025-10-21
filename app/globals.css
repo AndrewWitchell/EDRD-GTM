@@ -5,27 +5,43 @@
 @theme {
   --font-*: initial;
   --font-inter: Inter, sans-serif;
+  --font-serif: 'Libre Baskerville', serif;
 
+  /* Eat Different RD Brand Colors */
   --color-current: currentColor;
   --color-transparent: transparent;
-  --color-stroke: #eeeeee;
-  --color-strokedark: #2d2f40;
-  --color-hoverdark: #252a42;
-  --color-titlebg: #adfff8;
-  --color-titlebg2: #ffeac2;
-  --color-titlebgdark: #46495a;
-  --color-btndark: #292e45;
+
+  /* Primary Palette */
+  --color-teal: #0d7680;
+  --color-sage: #6b9080;
+  --color-terracotta: #e07a5f;
+  --color-coral: #f4a58a;
+
+  /* Neutrals */
+  --color-charcoal: #2d3142;
+  --color-slate: #4f5d75;
+  --color-light-gray: #eef1f5;
+  --color-off-white: #fafbfc;
   --color-white: #ffffff;
-  --color-black: #181c31;
-  --color-blackho: #2c3149;
-  --color-blacksection: #1c2136;
-  --color-primary: #006bff;
-  --color-primaryho: #0063ec;
-  --color-meta: #20c5a8;
-  --color-waterloo: #757693;
+
+  /* Semantic Mappings for Template Compatibility */
+  --color-stroke: #eeeeee;
+  --color-strokedark: #2d3142;
+  --color-hoverdark: #252a42;
+  --color-titlebg: #d4eaec;
+  --color-titlebg2: #f4e6d8;
+  --color-titlebgdark: #46495a;
+  --color-btndark: #0a5f68;
+  --color-black: #2d3142;
+  --color-blackho: #4f5d75;
+  --color-blacksection: #2d3142;
+  --color-primary: #0d7680;
+  --color-primaryho: #0a5f68;
+  --color-meta: #6b9080;
+  --color-waterloo: #4f5d75;
   --color-manatee: #999aa1;
-  --color-alabaster: #fbfbfb;
-  --color-zumthor: #edf5ff;
+  --color-alabaster: #fafbfc;
+  --color-zumthor: #eef1f5;
   --color-socialicon: #d1d8e0;
 
   --text-metatitle: 12px, 20px;

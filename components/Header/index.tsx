@@ -39,18 +39,12 @@ const Header = () => {
         <div className="flex w-full items-center justify-between xl:w-1/4">
           <a href="/">
             <Image
-              src="/images/logo/logo-dark.svg"
-              alt="logo"
-              width={119.03}
-              height={30}
-              className="hidden w-full dark:block"
-            />
-            <Image
-              src="/images/logo/logo-light.svg"
-              alt="logo"
-              width={119.03}
-              height={30}
-              className="w-full dark:hidden"
+              src="/images/logo-with-text.png"
+              alt="Eat Different RD - eat evidence-based"
+              width={250}
+              height={63}
+              className="w-auto h-12"
+              priority
             />
           </a>
 
@@ -154,19 +148,21 @@ const Header = () => {
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
             <ThemeToggler />
 
-            <Link
-              href="https://github.com/NextJSTemplates/solid-nextjs"
+            <a
+              href="tel:+16474567952"
               className="text-regular font-medium text-waterloo hover:text-primary"
             >
-              GitHub Repo 🌟
-            </Link>
+              +1-647-456-7952
+            </a>
 
-            <Link
-              href="https://nextjstemplates.com/templates/solid"
+            <a
+              href="https://eatdifferentrd.janeapp.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
             >
-              Get Pro 🔥
-            </Link>
+              Book Consultation
+            </a>
           </div>
         </div>
       </div>

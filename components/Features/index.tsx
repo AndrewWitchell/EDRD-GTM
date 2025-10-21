@@ -13,11 +13,9 @@ const Feature = () => {
           {/* <!-- Section Title Start --> */}
           <SectionHeader
             headerInfo={{
-              title: "SOLID FEATURES",
-              subtitle: "Core Features of Solid",
-              description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-            convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
-            ante in maximus.`,
+              title: "OUR APPROACH",
+              subtitle: "Evidence-Based Nutrition Therapy",
+              description: `Personalized therapeutic nutrition grounded in scientific research. We assess each patient individually to find the most sustainable way of eating that helps you achieve your health goals.`,
             }}
           />
           {/* <!-- Section Title End --> */}

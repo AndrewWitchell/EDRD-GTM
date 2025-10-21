@@ -7,7 +7,7 @@ const About = () => {
   return (
     <>
       {/* <!-- ===== About Start ===== --> */}
-      <section className="overflow-hidden pb-20 lg:pb-25 xl:pb-30">
+      <section id="about" className="overflow-hidden pb-20 lg:pb-25 xl:pb-30">
         <div className="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
           <div className="flex items-center gap-8 lg:gap-32.5">
             <motion.div
@@ -26,19 +26,14 @@ const About = () => {
               whileInView="visible"
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
+              className="animate_left relative mx-auto hidden md:block md:w-1/2"
             >
               <Image
-                src="/images/about/about-light-01.png"
-                alt="About"
-                className="dark:hidden"
-                fill
-              />
-              <Image
-                src="/images/about/about-dark-01.png"
-                alt="About"
-                className="hidden dark:block"
-                fill
+                src="/images/eliana-headshot.webp"
+                alt="Eliana Witchell, MSc, RD, CDE - Registered Dietitian and Certified Diabetes Educator"
+                width={500}
+                height={500}
+                className="rounded-2xl shadow-lg"
               />
             </motion.div>
             <motion.div
@@ -60,46 +55,45 @@ const About = () => {
               className="animate_right md:w-1/2"
             >
               <span className="font-medium uppercase text-black dark:text-white">
-                <span className="mb-4 mr-4 inline-flex rounded-full bg-meta px-4.5 py-1 text-metatitle uppercase text-white ">
-                  New
+                <span className="mb-4 mr-4 inline-flex rounded-full bg-primary px-4.5 py-1 text-metatitle uppercase text-white ">
+                  About
                 </span>{" "}
-                SaaS Boilerplate for Next.js
+                Eliana Witchell
               </span>
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                A Complete Solution for
-                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark">
-                  SaaS Startup
+                Meet Your
+                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-[#d4eaec] dark:before:bg-titlebgdark">
+                  {" "}Registered Dietitian
                 </span>
               </h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                ultricies lacus non fermentum ultrices. Fusce consectetur le.
+                Eliana Witchell is a Registered Dietitian (RD), Certified Diabetes Educator (CDE), and holds a Master of Science (MSc) degree. As Chief Dietitian at the Institute for Personalized Therapeutic Nutrition (IPTN) and Founder of Eat Different RD, she specializes in evidence-based carbohydrate restriction for metabolic health.
               </p>
 
               <div className="mt-7.5 flex items-center gap-5">
-                <div className="flex h-15 w-15 items-center justify-center rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection">
-                  <p className="text-metatitle2 font-semibold text-black dark:text-white">
+                <div className="flex h-15 w-15 items-center justify-center rounded-[50%] border border-stroke bg-primary/10 dark:border-strokedark dark:bg-blacksection">
+                  <p className="text-metatitle2 font-semibold text-primary dark:text-white">
                     01
                   </p>
                 </div>
                 <div className="w-3/4">
                   <h3 className="mb-0.5 text-metatitle2 text-black dark:text-white">
-                    React 18, Next.js 13 and TypeScript
+                    Chief Dietitian, IPTN
                   </h3>
-                  <p>Ut ultricies lacus non fermentum ultrices.</p>
+                  <p>Leading therapeutic nutrition research and practice at the Institute for Personalized Therapeutic Nutrition.</p>
                 </div>
               </div>
               <div className="mt-7.5 flex items-center gap-5">
-                <div className="flex h-15 w-15 items-center justify-center rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection">
-                  <p className="text-metatitle2 font-semibold text-black dark:text-white">
+                <div className="flex h-15 w-15 items-center justify-center rounded-[50%] border border-stroke bg-primary/10 dark:border-strokedark dark:bg-blacksection">
+                  <p className="text-metatitle2 font-semibold text-primary dark:text-white">
                     02
                   </p>
                 </div>
                 <div className="w-3/4">
                   <h3 className="mb-0.5 text-metatitle2 text-black dark:text-white">
-                    Fully Customizable
+                    MSc, RD, CDE Credentials
                   </h3>
-                  <p>consectetur adipiscing elit fermentum ultricies.</p>
+                  <p>Master of Science, Registered Dietitian, and Certified Diabetes Educator with specialized training in metabolic health.</p>
                 </div>
               </div>
             </motion.div>
@@ -131,25 +125,26 @@ const About = () => {
               className="animate_left md:w-1/2"
             >
               <h4 className="font-medium uppercase text-black dark:text-white">
-                Launch Your SaaS Fast
+                Research & Professional Development
               </h4>
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                Packed with All Essential {"   "}
-                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg2 dark:before:bg-titlebgdark">
-                  Integrations
+                Advancing the Field of {"   "}
+                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-[#d4eaec] dark:before:bg-titlebgdark">
+                  Therapeutic Nutrition
                 </span>
               </h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                ultricies lacus non fermentum ultrices. Fusce consectetur le.
+                Eliana partners with leading research institutions and health organizations to advance evidence-based carbohydrate restriction. She has collaborated with the University of British Columbia (UBC) to develop and analyze research on dietitian perspectives around carbohydrate-reduced diets, and co-creates webinars for health professionals on safe prescription of these approaches.
               </p>
               <div>
                 <a
-                  href="#"
+                  href="https://eatdifferentrd.janeapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary dark:text-white dark:hover:text-primary"
                 >
                   <span className="duration-300 group-hover:pr-2">
-                    Know More
+                    Book a Consultation
                   </span>
                   <svg
                     width="14"
