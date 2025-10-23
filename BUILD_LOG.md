@@ -594,6 +594,16 @@ git remote add origin https://github.com/AndrewWitchell/EDRD-GTM.git
 
 ### Commit Log
 
+**1437150** - ✨ Restructure homepage and navigation per sitemap architecture
+*October 23, 2025*
+
+Rebuilt homepage with simplified power-offer structure and complete navigation menu aligned with SITEMAP-STRATEGY_1_1.md. Created three new reusable components (SocialProofBanner, NavSection, FinalCTA) and restructured the homepage to mirror the navigation with conversion-focused CTAs for each major section.
+
+**9c8d82e** - 📚 Add comprehensive documentation (README + BUILD_LOG)
+*October 21, 2025*
+
+Added detailed project documentation including README and comprehensive BUILD_LOG.
+
 **e85d49b** - 🎨 Complete Eat Different RD website migration from template
 *October 21, 2025*
 
@@ -667,6 +677,6 @@ This is proprietary software developed for Eat Different RD. Unauthorized copyin
 
 ---
 
-**Last Updated:** October 21, 2025
-**Version:** 1.0.0-beta
-**Status:** Homepage Complete, Ready for Content Expansion
+**Last Updated:** October 23, 2025
+**Version:** 1.1.0-beta
+**Status:** Homepage Restructured, Navigation Complete, Ready for Page Development
