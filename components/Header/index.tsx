@@ -91,13 +91,13 @@ const Header = () => {
 
         {/* Nav Menu Start   */}
         <div
-          className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${
+          className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-3/4 ${
             navigationOpen &&
             "navbar visible! mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
           }`}
         >
           <nav>
-            <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
+            <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-6">
               {menuData.map((menuItem, key) => (
                 <li key={key} className={menuItem.submenu && "group relative"}>
                   {menuItem.submenu ? (
@@ -145,12 +145,12 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div className="mt-7 flex items-center gap-6 xl:mt-0">
+          <div className="mt-7 flex items-center gap-4 xl:mt-0">
             <ThemeToggler />
 
             <a
               href="tel:+16474567952"
-              className="text-regular font-medium text-waterloo hover:text-primary"
+              className="text-regular font-medium text-waterloo hover:text-primary whitespace-nowrap"
             >
               +1-647-456-7952
             </a>
@@ -159,7 +159,7 @@ const Header = () => {
               href="https://eatdifferentrd.janeapp.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
+              className="flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho whitespace-nowrap"
             >
               Book Consultation
             </a>
