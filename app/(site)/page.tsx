@@ -5,6 +5,7 @@ import SocialProofBanner from "@/components/SocialProofBanner";
 import NavSection from "@/components/NavSection";
 import FinalCTA from "@/components/FinalCTA";
 import ScrollAnimation from "@/components/ScrollAnimation";
+import TestimonialCarousel from "@/components/Testimonials/TestimonialCarousel";
 
 export const metadata: Metadata = {
   title: "Eliana Witchell RD - Evidence-Based Metabolic Health & Nutrition Therapy",
@@ -28,6 +29,9 @@ export default function Home() {
     <main>
       {/* Hero Section - Primary value proposition */}
       <Hero />
+
+      {/* Testimonial Carousel - Patient Success Stories */}
+      <TestimonialCarousel />
 
       {/* Partnership Organizations */}
       <ScrollAnimation>
