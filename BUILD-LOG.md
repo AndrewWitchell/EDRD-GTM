@@ -2866,3 +2866,69 @@ Decision tree now covers all document types, making it clear where any new conte
 **Last Updated:** October 24, 2025, 14:00:00  
 **Status:** Website development active, all systems operational on latest stable stack ✅
 
+
+---
+
+## Session 17: Fix Swiper Import for Next.js 16 Compatibility (October 24, 2025)
+
+**Duration:** ~15 minutes  
+**Focus:** Fix Vercel build failure caused by Swiper v12 breaking changes
+
+### The Problem
+
+Vercel build failed with TypeScript error:
+```
+Type error: Module '"swiper"' has no exported member 'Autoplay'.
+```
+
+**Root Cause:**
+- Swiper upgraded from v9.4.1 → v12.0.3 in Session 16
+- Swiper v12 changed module import syntax
+- Old: `import { Autoplay, Pagination } from "swiper"`
+- New: `import { Autoplay, Pagination } from "swiper/modules"`
+
+### What Was Fixed
+
+**File Modified:**
+- `components/Testimonial/index.tsx` - Updated import statement
+
+**Change:**
+```diff
+- import { Autoplay, Pagination } from "swiper";
++ import { Autoplay, Pagination } from "swiper/modules";
+```
+
+### Testing
+
+- ✅ Local build passes (`npm run build`)
+- ✅ TypeScript compiles without errors
+- ✅ All 13 pages generate successfully
+- ✅ No other Swiper imports in codebase
+
+### Key Learning
+
+**Breaking Change Awareness:**
+- Major version upgrades (v9 → v12) require API migration
+- Always check changelog for breaking changes
+- Test builds locally before pushing to production
+
+**Swiper v12 Changes:**
+- Modules now imported from `swiper/modules`
+- More modular architecture
+- Better tree-shaking for smaller bundles
+
+### Git Commit
+
+**Commit:** [pending] - "fix(testimonial): update Swiper imports for v12 compatibility"
+
+**Files Changed:**
+- components/Testimonial/index.tsx (1 line)
+- BUILD-LOG.md (this session)
+
+**Impact:** Fixes Vercel production build
+
+---
+
+**Last Updated:** October 24, 2025, 14:15:00  
+**Status:** Build fixed, ready for deployment ✅
+
