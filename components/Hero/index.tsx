@@ -97,13 +97,6 @@ const Hero = () => {
               ...would that change everything?
             </p>
 
-            {/* Credentials Line */}
-            <p className="mb-6 text-sm leading-relaxed text-waterloo">
-              Eliana Witchell, MSc, RD, CDE — Published researcher in diabetes remission
-              and carbohydrate restriction (European Journal of Clinical Nutrition, 2023).
-              Serving 600+ patients across military and civilian populations.
-            </p>
-
             {/* Bridge Copy */}
             <p className="mb-6 text-center text-base leading-relaxed text-slate dark:text-manatee lg:text-left">
               Start with understanding what makes this different, then experience it yourself—free.
@@ -155,7 +148,7 @@ const Hero = () => {
           </div>
 
           {/* Right Column - Professional Photo */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex flex-col items-center gap-8 lg:items-end">
             <div className="relative">
               <Image
                 src="/images/eliana-headshot.webp"
@@ -172,6 +165,13 @@ const Hero = () => {
                 </p>
               </div>
             </div>
+
+            {/* Credentials Line */}
+            <p className="mt-4 max-w-md text-center text-sm leading-relaxed text-waterloo lg:text-right">
+              Eliana Witchell, MSc, RD, CDE — Published researcher in diabetes remission
+              and carbohydrate restriction (European Journal of Clinical Nutrition, 2023).
+              Serving 600+ patients across military and civilian populations.
+            </p>
           </div>
         </div>
       </div>
