@@ -582,6 +582,197 @@ Used web scraping to extract:
 
 ---
 
+## Session: Course-First Strategy & Brand Refresh
+
+**Date:** October 23, 2025 (Evening)
+**Focus:** Strategic pivot from 1:1 consultation to scalable course funnel
+
+### Strategic Shift
+
+**From:** Service-based consultation model (book appointment → 1:1 sessions)
+**To:** Scalable course funnel (Free Preview → Course → Community → 1:1 if needed)
+
+**Rationale:**
+- Better scalability for Eliana's time
+- Lower barrier to entry for potential clients
+- Builds trust through free preview before purchase
+- Creates clear value ladder
+
+### Major Changes
+
+#### 1. Hero Section Transformation
+
+**New Headline Strategy:**
+- Main: "Finally Understand What Your Body Needs"
+- Dynamic rotating "without" statements (7 variations, 2.5s intervals)
+- Fixed "Without" text with rotating content after it
+
+**Rotating Messages:**
+1. "without restrictive diets"
+2. "without feeling overwhelmed"
+3. "without conflicting advice"
+4. "without cookie-cutter plans"
+5. "without giving up foods you love"
+6. "without complicated meal prep"
+7. "without the stress"
+
+**Layout Changes:**
+- Moved headshot to right side on desktop (2-column grid)
+- Better visual balance and professionalism
+- Responsive stacking on mobile
+
+**CTA Hierarchy:**
+- Primary: "See How It Works First" → `/preview`
+- Secondary: "Why This Is Different" → `/about`
+- Removed direct booking CTA
+
+#### 2. New Pages Created
+
+**Preview Page (`/preview`):**
+- Email capture for free video module
+- Clear value proposition
+- Form submission handling
+- Trust indicators
+- No payment required messaging
+
+**About Page (`/about`):**
+- Full credentials and accomplishments
+- Empathetic sales content
+- Personal story and approach
+- Professional qualifications
+- Partnership validations
+
+#### 3. Contact Strategy Overhaul
+
+**Removed:**
+- All phone numbers
+- Direct consultation booking CTAs
+- Immediate appointment scheduling
+
+**New Approach:**
+- Email-only contact (eliana@eatdifferentrd.com)
+- 24-48 hour response time messaging
+- Funnel leads through free preview first
+- Community and course emphasis
+
+#### 4. Navigation Updates
+
+**Header Changes:**
+- Button text: "Book Consultation" → "Start Free Course"
+- Links to `/preview` page
+- Modern 3-level dropdown menu system
+- Improved mobile navigation
+
+**Menu Structure:**
+- Patients (dropdown)
+- Case Studies
+- For Healthcare Professionals (dropdown)
+- Blog (dropdown)
+- About (dropdown)
+
+#### 5. Logo Brand Refresh
+
+**New Logo:**
+- Updated to Eliana Witchell RD branded logo (640x640px)
+- Food illustration design
+- Better represents nutrition focus
+- Filename changed to `eliana-logo.png` for cache busting
+
+**Removed:**
+- Old `logo-with-text.png` file (2MB)
+
+#### 6. Footer Enhancements
+
+**Updated Sections:**
+- Quick Links revised for new funnel
+- "Watch Free Module" CTA added
+- Response time messaging
+- Removed phone contact options
+- Email-only support
+
+**New Quick Links:**
+- Home
+- Free Preview (emphasized)
+- About Eliana
+- Course
+- Community
+
+#### 7. Component Updates
+
+**Modified Components:**
+- Hero: New headline system, layout, CTAs
+- Header: Navigation, button, dropdowns
+- Footer: Links, CTAs, contact strategy
+- NavSection: Streamlined content
+- FinalCTA: Funnel-focused messaging
+- SocialProofBanner: Updated copy
+- Brands: Better visual presentation
+
+### Files Modified
+
+**New Pages:**
+1. `app/(site)/about/page.tsx` - 463 lines
+2. `app/(site)/preview/page.tsx` - 246 lines
+
+**Updated Components:**
+3. `components/Hero/index.tsx`
+4. `components/Header/index.tsx`
+5. `components/Footer/index.tsx`
+6. `components/NavSection/index.tsx`
+7. `components/FinalCTA/index.tsx`
+8. `components/SocialProofBanner/index.tsx`
+9. `components/Brands/index.tsx`
+
+**Assets:**
+10. `public/images/eliana-logo.png` - Added (335KB)
+11. `public/images/logo-with-text.png` - Removed (2MB)
+
+**Total Impact:**
+- 11 files changed
+- 1,132 insertions (+)
+- 398 deletions (-)
+- Net: +734 lines
+
+### Testing
+
+- ✅ Hero animation works smoothly
+- ✅ CTAs link to correct pages
+- ✅ Preview page form displays
+- ✅ About page renders properly
+- ✅ Navigation dropdowns function
+- ✅ Footer links correct
+- ✅ Mobile responsive
+- ✅ New logo displays
+
+### Business Impact
+
+**Before:**
+- High friction entry (direct booking)
+- Limited scalability
+- Phone support required
+- Time-intensive 1:1 model
+
+**After:**
+- Low friction entry (free preview)
+- Highly scalable course model
+- Email-only support
+- Automated funnel
+- Clear value ladder
+- Better time leverage for Eliana
+
+**Conversion Funnel:**
+1. Visit website
+2. See compelling hero message
+3. Click "See How It Works First"
+4. Watch free preview module
+5. Join course if interested
+6. Engage with community
+7. Book 1:1 only if needed (premium tier)
+
+**Status:** ✅ Complete - Strategic pivot successfully implemented
+
+---
+
 ## Session: Tech Stack Upgrade & Logo Enhancement
 
 **Date:** October 24, 2025
@@ -709,6 +900,21 @@ git remote add origin https://github.com/AndrewWitchell/EDRD-GTM.git
 ```
 
 ### Commit Log
+
+**5cbd721** - ⬆️ Upgrade to Next.js 16 and React 19.2 with logo enhancement
+*October 24, 2025*
+
+Major framework upgrade bringing the project to latest stable versions (Next.js 16.0.0, React 19.2.0) with improved performance. Updated all 19 outdated packages including Swiper, TypeScript, ESLint, and Tailwind CSS. Removed deprecated configuration options and increased navbar logo size by 67% for better brand visibility. All systems tested and operational.
+
+**b4069eb** - Implement course-first CTA strategy and brand refresh
+*October 23, 2025 (Evening)*
+
+Major strategic shift from 1:1 consultation focus to scalable course funnel. New hero with rotating "without" statements, created /preview email capture page and /about page. Removed all phone numbers for email-only contact strategy. Updated navigation to "Start Free Course" CTA. Refreshed brand with new Eliana Witchell RD logo (640x640px food illustration). Updated all components to align with new conversion funnel strategy.
+
+**8a6c449** - 📝 Update BUILD_LOG with navigation restructure session
+*October 23, 2025*
+
+Documentation update capturing the homepage and navigation restructure work.
 
 **1437150** - ✨ Restructure homepage and navigation per sitemap architecture
 *October 23, 2025*
