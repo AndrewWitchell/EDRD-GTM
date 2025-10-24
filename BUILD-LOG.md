@@ -3303,6 +3303,150 @@ Community upgrade
 
 ---
 
-**Last Updated:** October 24, 2025, 16:30:00
-**Status:** Homepage CTA strategy fully implemented, ready for user testing ✅
+## Session 21: Thinkific Widget Integration & CSP Troubleshooting (October 24, 2025)
+
+### What We Built
+
+**Core Implementation:**
+- Integrated Thinkific product card widget on `/about` page
+- Embedded course preview in "See For Yourself" section
+- Implemented proper script loading with `useEffect`
+- Created `.claude.md` for project-specific instructions
+
+**Technical Challenge Solved:**
+- Next.js 16 strict Content Security Policy blocking Thinkific JavaScript in development
+- Widget requires `eval()` which CSP blocks by default
+- Widget appears as 640×0 empty div in localhost but works perfectly in production
+
+### The CSP Journey (Troubleshooting Saga)
+
+**Attempts Made:**
+1. ❌ Next.js `Script` component with `afterInteractive` strategy
+2. ❌ Custom `headers()` in `next.config.js`
+3. ❌ Middleware with CSP headers (`middleware.ts`)
+4. ❌ Direct iframe embed (blocked by Thinkific's X-Frame-Options: sameorigin)
+5. ❌ `dangerouslySetInnerHTML` with inline script
+6. ✅ useEffect script loading + accepting dev mode limitation
+
+**Root Cause:**
+- Next.js 16 with Turbopack enforces strict CSP in development mode
+- CSP blocks `eval()` which Thinkific's widget JavaScript requires
+- Middleware approach deprecated in Next.js 16 (warning shown)
+- Production (Vercel) has proper CSP configuration that allows the widget
+
+**Solution:**
+- Accept that widget won't display in localhost dev mode
+- Document the limitation with code comments
+- Verify functionality in Vercel production deployment
+- Use clean `useEffect` pattern for script loading
+
+### Files Modified
+
+1. **`app/(site)/about/page.tsx`**
+   - Added Thinkific product card widget in "See For Yourself" section
+   - Implemented `useEffect` to load Thinkific script
+   - Added comments documenting dev mode limitation
+   - Line 380-399: Widget div with all styling parameters
+
+2. **`.claude.md`** (Created)
+   - Git workflow instructions
+   - "Do NOT commit unless user tests and confirms"
+   - User-initiated commit policy
+
+3. **`next.config.js`** (Attempted, reverted)
+   - Tried adding CSP headers (didn't work in dev mode)
+   - Reverted to original state
+
+4. **`middleware.ts`** (Created, then removed)
+   - Attempted CSP middleware approach
+   - Deprecated in Next.js 16
+   - Removed after production verification
+
+### Key Learning: Development vs Production CSP
+
+**The Insight:**
+Different CSP enforcement between dev and production environments is normal and expected in Next.js 16.
+
+**Why This Matters:**
+- Localhost: Strict CSP blocks third-party widgets using eval()
+- Production (Vercel): Proper CSP headers allow legitimate third-party scripts
+- Testing third-party integrations requires staging/production environment
+
+**Best Practice:**
+- Document dev mode limitations in code comments
+- Verify third-party integrations in production before shipping
+- Don't spend hours fighting dev mode CSP—test in staging instead
+
+### Widget Configuration
+
+**Thinkific Product Card Parameters:**
+```javascript
+data-product="3441431"
+data-btn-txt="See How It Works First"
+data-btn-bg-color="#0D9488" (teal)
+data-btn-txt-color="#ffffff" (white)
+data-card-type="card"
+data-link-type="landing_page"
+data-store-url="https://eat-different-rd.thinkific.com/embeds/products/show"
+```
+
+**Script Source:**
+`https://assets.thinkific.com/js/embeds/product-cards-client.min.js`
+
+### Technical Stack Notes
+
+**Next.js 16 Changes:**
+- Turbopack is now stable (used by default)
+- Stricter CSP enforcement in development
+- Middleware pattern deprecated → use proxy instead
+- Production CSP managed by hosting provider (Vercel)
+
+**CSP Understanding:**
+- `unsafe-eval` required for Thinkific widget
+- `frame-src` needed for iframe embeds
+- `connect-src` for API calls
+- Middleware can't reliably override Turbopack CSP in dev
+
+### What This Demonstrates
+
+**Problem-Solving Pattern:**
+1. Try obvious solution (Script component)
+2. Research CSP headers
+3. Attempt multiple workarounds
+4. Understand the actual constraint
+5. Accept limitation, document it
+6. Verify in production (the real test)
+
+**When to Stop Fighting:**
+- Spent ~30 minutes on CSP workarounds
+- Realized production works perfectly
+- Accepted dev mode limitation as reasonable tradeoff
+- Documented for future reference
+
+### Production Verification
+
+✅ **Tested on Vercel deployment - widget displays correctly**
+- Course card renders with proper styling
+- Button appears with teal background (#0D9488)
+- Iframe loads Thinkific content
+- No CSP errors in production console
+
+### Next Steps (Not Implemented)
+
+**Future Enhancements:**
+- Test widget on custom domain (elianawitchellrd.com)
+- Monitor widget performance/loading times
+- A/B test button copy ("See How It Works First")
+- Track click-through rate to Thinkific course
+
+**Potential Issues to Watch:**
+- Widget loading speed (external JavaScript)
+- Mobile responsive behavior
+- Dark mode compatibility
+- Analytics tracking through widget
+
+---
+
+**Last Updated:** October 24, 2025, 17:15:00
+**Status:** Thinkific widget integrated and verified in production ✅
 
