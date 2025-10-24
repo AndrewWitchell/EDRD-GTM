@@ -1,11 +1,8 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-
-export const metadata: Metadata = {
-  title: "About Eliana Witchell | Eat Different RD",
-  description: "Meet Eliana Witchell, MSc, RD, CDE. Published researcher in diabetes remission and evidence-based nutrition therapy. Serving 600+ patients with metabolic conditions.",
-};
+import Script from "next/script";
 
 export default function WhyDifferent() {
   return (
@@ -361,10 +358,33 @@ export default function WhyDifferent() {
             </p>
 
             {/* Thinkific Product Card Widget */}
-            <div
-              className="w-full max-w-2xl mx-auto"
-              dangerouslySetInnerHTML={{
-                __html: `<div class="thinkific-product-card" data-btn-txt="See How It Works First" data-btn-txt-color="#ffffff" data-btn-bg-color="#0D9488" data-card-type="card" data-link-type="landing_page" data-product="3441431" data-embed-version="0.0.2" data-card-txt-color="#7d7d7d" data-card-bg-color="#ffffff" data-store-url="https://eat-different-rd.thinkific.com/embeds/products/show"><div class="iframe-container"></div><script type="text/javascript">document.getElementById("thinkific-product-embed") || document.write('<script id="thinkific-product-embed" type="text/javascript" src="https://assets.thinkific.com/js/embeds/product-cards-client.min.js"><\\/script>');</script><noscript><a href="https://eat-different-rd.thinkific.com/courses/CAF-Why-You-Eat" target="_blank">See How It Works First</a></noscript></div>`
+            <div className="w-full max-w-2xl mx-auto">
+              <div
+                className="thinkific-product-card"
+                data-btn-txt="See How It Works First"
+                data-btn-txt-color="#ffffff"
+                data-btn-bg-color="#0D9488"
+                data-card-type="card"
+                data-link-type="landing_page"
+                data-product="3441431"
+                data-embed-version="0.0.2"
+                data-card-txt-color="#7d7d7d"
+                data-card-bg-color="#ffffff"
+                data-store-url="https://eat-different-rd.thinkific.com/embeds/products/show"
+              >
+                <div className="iframe-container"></div>
+              </div>
+            </div>
+
+            {/* Load Thinkific Script */}
+            <Script
+              src="https://assets.thinkific.com/js/embeds/product-cards-client.min.js"
+              strategy="afterInteractive"
+              onLoad={() => {
+                // Force initialization if the library provides an init method
+                if (typeof window !== 'undefined' && (window as any).ThinkificProductCards) {
+                  (window as any).ThinkificProductCards.init();
+                }
               }}
             />
           </div>
