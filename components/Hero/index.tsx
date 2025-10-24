@@ -4,8 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
-  const [currentStatementIndex, setCurrentStatementIndex] = useState(0);
-
   const withoutStatements = [
     "being afraid to hope this time",
     "conflicting advice from different doctors",
@@ -16,13 +14,49 @@ const Hero = () => {
     "your doctor dismissing what you're going through",
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentStatementIndex((prev) => (prev + 1) % withoutStatements.length);
-    }, 2500);
+  const [currentStatementIndex, setCurrentStatementIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
-    return () => clearInterval(interval);
-  }, [withoutStatements.length]);
+  useEffect(() => {
+    const currentStatement = withoutStatements[currentStatementIndex];
+
+    // Paused state - wait before deleting
+    if (isPaused) {
+      const pauseTimeout = setTimeout(() => {
+        setIsPaused(false);
+        setIsDeleting(true);
+      }, 2000); // Pause for 2 seconds when fully typed
+      return () => clearTimeout(pauseTimeout);
+    }
+
+    // Typing or deleting
+    const typingSpeed = isDeleting ? 30 : 60; // Faster delete, slower type
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // Typing forward
+        if (displayedText.length < currentStatement.length) {
+          setDisplayedText(currentStatement.slice(0, displayedText.length + 1));
+        } else {
+          // Finished typing, pause before deleting
+          setIsPaused(true);
+        }
+      } else {
+        // Deleting backward
+        if (displayedText.length > 0) {
+          setDisplayedText(currentStatement.slice(0, displayedText.length - 1));
+        } else {
+          // Finished deleting, move to next statement
+          setIsDeleting(false);
+          setCurrentStatementIndex((prev) => (prev + 1) % withoutStatements.length);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, isPaused, currentStatementIndex, withoutStatements]);
 
   return (
     <section className="relative overflow-hidden bg-white pt-32 pb-20 dark:bg-black lg:pt-40 lg:pb-28">
@@ -47,20 +81,15 @@ const Hero = () => {
               If you could learn what to eat for YOUR health condition...
             </p>
 
-            {/* Rotating "Without" Statements */}
+            {/* Typing "Without" Statements */}
             <div className="relative mb-4 min-h-[60px] lg:min-h-[50px]">
-              {withoutStatements.map((statement, index) => (
-                <p
-                  key={index}
-                  className={`text-lg leading-relaxed text-slate transition-opacity duration-300 dark:text-manatee ${
-                    index === currentStatementIndex
-                      ? "relative opacity-100"
-                      : "absolute inset-0 opacity-0"
-                  }`}
-                >
-                  Without {statement}
-                </p>
-              ))}
+              <p className="text-lg leading-relaxed text-slate dark:text-manatee">
+                Without{" "}
+                <span className="inline-block min-w-[20px]">
+                  {displayedText}
+                  <span className="ml-0.5 inline-block w-0.5 h-5 bg-teal animate-pulse"></span>
+                </span>
+              </p>
             </div>
 
             {/* Closing Question */}
