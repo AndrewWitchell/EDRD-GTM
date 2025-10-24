@@ -6,8 +6,20 @@ import NavSection from "@/components/NavSection";
 import FinalCTA from "@/components/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "Eat Different RD - Metabolic Health & Nutrition Therapy",
+  title: "Eliana Witchell RD - Evidence-Based Metabolic Health & Nutrition Therapy",
   description: "Evidence-based metabolic health support from Registered Dietitian Eliana Witchell, MSc, RD, CDE. Specialized nutrition therapy for Type 2 Diabetes, Prediabetes, PCOS, and GLP-1 medication support.",
+  openGraph: {
+    title: "Eliana Witchell RD - Evidence-Based Metabolic Health",
+    description: "Published researcher specializing in diabetes remission and carbohydrate restriction. Serving 600+ patients across military and civilian populations.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Eliana Witchell RD",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eliana Witchell RD - Evidence-Based Metabolic Health",
+    description: "Published researcher specializing in diabetes remission and carbohydrate restriction. Serving 600+ patients.",
+  },
 };
 
 export default function Home() {
