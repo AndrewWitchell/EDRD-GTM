@@ -40,11 +40,11 @@ const Footer = () => {
               >
                 <a href="/" className="relative">
                   <Image
-                    width={180}
-                    height={45}
-                    src="/images/logo-with-text.png"
-                    alt="Eat Different RD - eat evidence-based"
-                    className="h-auto w-auto max-h-12"
+                    width={150}
+                    height={150}
+                    src="/images/eliana-logo.png"
+                    alt="Eliana Witchell RD - Evidence-Based Nutrition"
+                    className="h-auto w-auto max-h-16"
                   />
                 </a>
 
@@ -53,7 +53,7 @@ const Footer = () => {
                 </p>
 
                 <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">
-                  contact
+                  Get In Touch
                 </p>
                 {hasMounted && (
                   <>
@@ -63,12 +63,9 @@ const Footer = () => {
                     >
                       eliana@eatdifferentrd.com
                     </a>
-                    <a
-                      href="tel:+16474567952"
-                      className="block text-itemtitle font-medium text-black hover:text-primary dark:text-white dark:hover:text-primary"
-                    >
-                      +1-647-456-7952
-                    </a>
+                    <p className="text-sm text-waterloo">
+                      We respond within 24-48 hours
+                    </p>
                   </>
                 )}
               </motion.div>
@@ -107,7 +104,15 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="#about"
+                        href="/preview"
+                        className="mb-3 inline-block hover:text-primary"
+                      >
+                        Free Preview
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/about"
                         className="mb-3 inline-block hover:text-primary"
                       >
                         About Eliana
@@ -115,20 +120,18 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="#features"
+                        href="#"
                         className="mb-3 inline-block hover:text-primary"
                       >
-                        Our Approach
+                        Course
                       </a>
                     </li>
                     <li>
                       <a
-                        href="https://eatdifferentrd.janeapp.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="#"
                         className="mb-3 inline-block hover:text-primary"
                       >
-                        Book Consultation
+                        Community
                       </a>
                     </li>
                   </ul>
@@ -216,16 +219,14 @@ const Footer = () => {
                     Get Started
                   </h4>
                   <p className="mb-4 w-[90%]">
-                    Book your complimentary 30-minute consultation to discuss your health goals and learn how evidence-based nutrition can help.
+                    Watch the first module free and see if this evidence-based approach resonates with you before committing.
                   </p>
 
                   <a
-                    href="https://eatdifferentrd.janeapp.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/preview"
                     className="inline-flex rounded-full bg-primary px-7.5 py-3 text-white duration-300 ease-in-out hover:bg-primaryho"
                   >
-                    Book Free Consultation
+                    Watch Free Module
                   </a>
                 </motion.div>
               </div>

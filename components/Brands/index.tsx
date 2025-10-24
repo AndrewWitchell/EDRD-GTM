@@ -4,34 +4,35 @@ import React from "react";
 const Brands = () => {
   const partnerships = [
     "Dietitians of Canada",
-    "Institute for Personalized Therapeutic Nutrition (IPTN)",
-    "University of British Columbia (UBC)",
+    "Institute for Personalized Therapeutic Nutrition",
+    "University of British Columbia",
     "BC Patient Safety & Quality Council",
     "Canadian Pharmacists Association",
     "Wellington Dufferin Diabetes"
   ];
 
   return (
-    <>
-      {/* Partnerships Section */}
-      <section className="border border-x-0 border-y-stroke bg-alabaster py-11 dark:border-y-strokedark dark:bg-black">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <p className="mb-8 text-center text-sm font-medium text-waterloo">
+    <section className="relative overflow-hidden bg-white py-16 dark:bg-black">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <p className="mb-10 text-center text-sm font-medium text-waterloo">
             Trusted partnerships with leading healthcare organizations
           </p>
-          <div className="grid grid-cols-2 items-center justify-center gap-7.5 md:grid-cols-3 lg:grid-cols-6 lg:gap-12.5">
+          <div className="grid grid-cols-1 items-center justify-center gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {partnerships.map((partner, key) => (
               <div
                 key={key}
-                className="flex h-20 items-center justify-center rounded-lg bg-white p-4 text-center transition-all hover:shadow-md dark:bg-blacksection"
+                className="flex items-center justify-center text-center transition-colors duration-200"
               >
-                <p className="text-xs font-medium text-black dark:text-white">{partner}</p>
+                <p className="text-sm font-medium text-slate/60 hover:text-teal dark:text-manatee/60 dark:hover:text-teal">
+                  {partner}
+                </p>
               </div>
             ))}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

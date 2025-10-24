@@ -1,111 +1,147 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [currentStatementIndex, setCurrentStatementIndex] = useState(0);
+
+  const withoutStatements = [
+    "being afraid to hope this time",
+    "conflicting advice from different doctors",
+    "restrictive diets that leave you exhausted",
+    "your body working against you every step",
+    "expensive tests your insurance won't cover",
+    "months of trial-and-error",
+    "your doctor dismissing what you're going through",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStatementIndex((prev) => (prev + 1) % withoutStatements.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [withoutStatements.length]);
+
   return (
-    <>
-      <section className="overflow-hidden pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="flex lg:items-center lg:gap-8 xl:gap-32.5">
-            {/* Left Column - Content */}
-            <div className="md:w-1/2">
-              <h4 className="mb-4.5 text-lg font-medium text-primary dark:text-white">
-                eat evidence-based
-              </h4>
-              <h1 className="mb-5 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                Evidence-Based Nutrition That{" "}
-                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-[#d4eaec] dark:before:bg-titlebgdark">
-                  Reverses Disease
-                </span>
-              </h1>
-              <p className="mb-4 text-lg">
-                Personalized nutrition therapy from Eliana Witchell, MSc, RD, CDE — Chief Dietitian at the Institute for Personalized Therapeutic Nutrition.
-              </p>
-
-              {/* Social Proof */}
-              <div className="mb-6 rounded-lg bg-alabaster p-4 dark:bg-blacksection">
-                <p className="text-sm font-semibold text-primary">
-                  Over 1,000 lbs of weight loss across 53 patients
-                </p>
-                <p className="text-xs text-waterloo">Evidence-based results, not promises</p>
-              </div>
-
-              {/* Condition Tags */}
-              <div className="mb-8 flex flex-wrap gap-3">
-                <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary dark:bg-primary/20">
-                  ✓ Type 2 Diabetes
-                </span>
-                <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary dark:bg-primary/20">
-                  ✓ Prediabetes
-                </span>
-                <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary dark:bg-primary/20">
-                  ✓ PCOS
-                </span>
-                <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary dark:bg-primary/20">
-                  ✓ Metabolic Health
-                </span>
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-5">
-                <a
-                  href="https://eatdifferentrd.janeapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex rounded-full bg-primary px-7.5 py-3 text-white duration-300 ease-in-out hover:bg-primaryho"
-                >
-                  Book Free 30-Min Consultation
-                </a>
-                <Link
-                  href="#about"
-                  className="flex rounded-full border-2 border-primary px-7.5 py-3 text-primary duration-300 ease-in-out hover:bg-primary hover:text-white"
-                >
-                  Learn About Eliana
-                </Link>
-              </div>
-
-              <p className="mt-5 text-sm text-waterloo">
-                📞 +1-647-456-7952 | 📧 eliana@eatdifferentrd.com
-              </p>
+    <section className="relative overflow-hidden bg-white pt-32 pb-20 dark:bg-black lg:pt-40 lg:pb-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
+          {/* Left Column - Text Content */}
+          <div className="text-center lg:text-left">
+            {/* Eyebrow */}
+            <div className="mb-6 lg:inline-block">
+              <span className="inline-flex items-center rounded-full bg-teal/10 px-4 py-1.5 text-sm font-medium text-teal">
+                Evidence-Based Nutrition
+              </span>
             </div>
 
-            {/* Right Column - Image + Credentials */}
-            <div className="animate_right hidden md:w-1/2 lg:block">
-              <div className="relative 2xl:-mr-7.5">
-                {/* Eliana's Professional Photo */}
-                <div className="mb-6 flex w-full max-w-[500px] items-center justify-center">
-                  <Image
-                    src="/images/eliana-headshot.webp"
-                    alt="Eliana Witchell, MSc, RD, CDE - Registered Dietitian and Certified Diabetes Educator"
-                    width={500}
-                    height={500}
-                    className="rounded-2xl shadow-lg"
-                    priority
-                  />
-                </div>
+            {/* Main Headline */}
+            <h1 className="mb-6 text-5xl font-bold tracking-tight text-black dark:text-white lg:text-6xl">
+              Finally Understand What Your Body Needs
+            </h1>
 
-                {/* Credential Badges */}
-                <div className="flex flex-wrap justify-center gap-3">
-                  <div className="rounded-lg border-2 border-meta bg-white px-4 py-2 dark:bg-black">
-                    <p className="text-xs font-semibold text-waterloo">REGISTERED</p>
-                    <p className="text-sm font-bold text-primary">DIETITIAN</p>
-                  </div>
-                  <div className="rounded-lg border-2 border-meta bg-white px-4 py-2 dark:bg-black">
-                    <p className="text-xs font-semibold text-waterloo">CERTIFIED</p>
-                    <p className="text-sm font-bold text-primary">DIABETES EDUCATOR</p>
-                  </div>
-                  <div className="rounded-lg border-2 border-meta bg-white px-4 py-2 dark:bg-black">
-                    <p className="text-xs font-semibold text-waterloo">MASTER OF</p>
-                    <p className="text-sm font-bold text-primary">SCIENCE</p>
-                  </div>
-                </div>
+            {/* Intro Text */}
+            <p className="mb-4 text-lg leading-relaxed text-slate dark:text-manatee">
+              If you could learn what to eat for YOUR health condition...
+            </p>
+
+            {/* Rotating "Without" Statements */}
+            <div className="relative mb-4 min-h-[60px] lg:min-h-[50px]">
+              {withoutStatements.map((statement, index) => (
+                <p
+                  key={index}
+                  className={`text-lg leading-relaxed text-slate transition-opacity duration-300 dark:text-manatee ${
+                    index === currentStatementIndex
+                      ? "relative opacity-100"
+                      : "absolute inset-0 opacity-0"
+                  }`}
+                >
+                  Without {statement}
+                </p>
+              ))}
+            </div>
+
+            {/* Closing Question */}
+            <p className="mb-8 text-lg font-medium leading-relaxed text-black dark:text-white">
+              ...would that change everything?
+            </p>
+
+            {/* Credentials Line */}
+            <p className="mb-6 text-sm leading-relaxed text-waterloo">
+              Eliana Witchell, MSc, RD, CDE — Published researcher in diabetes remission
+              and carbohydrate restriction (European Journal of Clinical Nutrition, 2023).
+              Serving 600+ patients across military and civilian populations.
+            </p>
+
+            {/* CTAs - New Hierarchy */}
+            <div className="flex flex-col items-center gap-4 lg:items-start">
+              {/* PRIMARY CTA */}
+              <div className="w-full sm:w-auto">
+                <Link
+                  href="/preview"
+                  className="group inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-teal to-[#0a5f68] px-8 py-4 text-lg font-semibold text-white shadow-md transition-all duration-200 hover:scale-105 hover:shadow-lg sm:w-auto"
+                >
+                  See How It Works First
+                  <svg className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Link>
+                <p className="mt-2 text-center text-sm text-waterloo sm:text-left">
+                  Watch the first module free. See if this resonates before committing.
+                </p>
+              </div>
+
+              {/* SECONDARY CTA */}
+              <div className="w-full sm:w-auto">
+                <Link
+                  href="/about"
+                  className="inline-flex w-full items-center justify-center rounded-full border-2 border-teal px-8 py-4 text-lg font-semibold text-teal transition-all duration-200 hover:bg-teal hover:text-white sm:w-auto"
+                >
+                  Why This Is Different
+                </Link>
+                <p className="mt-2 text-center text-sm text-waterloo sm:text-left">
+                  Evidence-based approach that works WITH your metabolism, not against it
+                </p>
+              </div>
+            </div>
+
+            {/* Condition Tags */}
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+              <span className="text-xs text-waterloo">✓</span>
+              <span className="text-sm text-slate dark:text-manatee">Type 2 Diabetes</span>
+              <span className="text-xs text-waterloo">✓</span>
+              <span className="text-sm text-slate dark:text-manatee">Prediabetes</span>
+              <span className="text-xs text-waterloo">✓</span>
+              <span className="text-sm text-slate dark:text-manatee">PCOS</span>
+              <span className="text-xs text-waterloo">✓</span>
+              <span className="text-sm text-slate dark:text-manatee">Metabolic Health</span>
+            </div>
+          </div>
+
+          {/* Right Column - Professional Photo */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              <Image
+                src="/images/eliana-headshot.webp"
+                alt="Eliana Witchell, MSc, RD, CDE"
+                width={500}
+                height={500}
+                className="rounded-2xl shadow-2xl ring-1 ring-slate/10"
+                priority
+              />
+              {/* Floating Credential Badge */}
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-white px-6 py-3 shadow-lg ring-1 ring-slate/10 dark:bg-charcoal">
+                <p className="text-center text-sm font-semibold text-teal">
+                  MSc, RD, CDE
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
