@@ -234,10 +234,10 @@ const Header = () => {
             <ThemeToggler />
 
             <Link
-              href="/preview"
+              href="/initial-consult"
               className="flex items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-r from-teal to-[#0a5f68] px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:scale-105 hover:shadow-md"
             >
-              Start Free Course
+              Start Your Free Initial Consult
             </Link>
           </div>
         </div>

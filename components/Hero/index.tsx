@@ -104,34 +104,39 @@ const Hero = () => {
               Serving 600+ patients across military and civilian populations.
             </p>
 
+            {/* Bridge Copy */}
+            <p className="mb-6 text-center text-base leading-relaxed text-slate dark:text-manatee lg:text-left">
+              Start with understanding what makes this different, then experience it yourself—free.
+            </p>
+
             {/* CTAs - New Hierarchy */}
             <div className="flex flex-col items-center gap-4 lg:items-start">
-              {/* PRIMARY CTA */}
+              {/* PRIMARY CTA - Why This Is Different */}
               <div className="w-full sm:w-auto">
                 <Link
-                  href="/preview"
+                  href="/about"
                   className="group inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-teal to-[#0a5f68] px-8 py-4 text-lg font-semibold text-white shadow-md transition-all duration-200 hover:scale-105 hover:shadow-lg sm:w-auto"
                 >
-                  See How It Works First
+                  Why This Is Different
                   <svg className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>
                 <p className="mt-2 text-center text-sm text-waterloo sm:text-left">
-                  Watch the first module free. See if this resonates before committing.
+                  Evidence-based approach that works WITH your metabolism, not against it
                 </p>
               </div>
 
-              {/* SECONDARY CTA */}
+              {/* SECONDARY CTA - Start Your Free Initial Consult */}
               <div className="w-full sm:w-auto">
                 <Link
-                  href="/why-different"
+                  href="/initial-consult"
                   className="inline-flex w-full items-center justify-center rounded-full border-2 border-teal px-8 py-4 text-lg font-semibold text-teal transition-all duration-200 hover:bg-teal hover:text-white sm:w-auto"
                 >
-                  Why This Is Different
+                  Start Your Free Initial Consult
                 </Link>
                 <p className="mt-2 text-center text-sm text-waterloo sm:text-left">
-                  Evidence-based approach that works WITH your metabolism, not against it
+                  Experience Eliana's $300 initial consultation in self-serve format—completely free
                 </p>
               </div>
             </div>
