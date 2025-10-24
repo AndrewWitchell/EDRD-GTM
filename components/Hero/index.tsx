@@ -125,7 +125,7 @@ const Hero = () => {
               {/* SECONDARY CTA */}
               <div className="w-full sm:w-auto">
                 <Link
-                  href="/about"
+                  href="/why-different"
                   className="inline-flex w-full items-center justify-center rounded-full border-2 border-teal px-8 py-4 text-lg font-semibold text-teal transition-all duration-200 hover:bg-teal hover:text-white sm:w-auto"
                 >
                   Why This Is Different
