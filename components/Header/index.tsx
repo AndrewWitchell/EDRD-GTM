@@ -60,7 +60,7 @@ const Header = () => {
               alt="Eliana Witchell RD - Evidence-Based Nutrition"
               width={150}
               height={150}
-              className="h-12 w-auto"
+              className="h-20 w-auto"
               priority
             />
           </a>
