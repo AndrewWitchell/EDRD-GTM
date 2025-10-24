@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const withoutStatements = [
@@ -65,24 +66,44 @@ const Hero = () => {
           {/* Left Column - Text Content */}
           <div className="text-center lg:text-left">
             {/* Eyebrow */}
-            <div className="mb-6 lg:inline-block">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0 }}
+              className="mb-6 lg:inline-block"
+            >
               <span className="inline-flex items-center rounded-full bg-teal/10 px-4 py-1.5 text-sm font-medium text-teal">
                 Evidence-Based Nutrition
               </span>
-            </div>
+            </motion.div>
 
             {/* Main Headline */}
-            <h1 className="mb-6 text-5xl font-bold tracking-tight text-black dark:text-white lg:text-6xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-6 text-5xl font-bold tracking-tight text-black dark:text-white lg:text-6xl"
+            >
               Finally Understand What Your Body Needs
-            </h1>
+            </motion.h1>
 
             {/* Intro Text */}
-            <p className="mb-4 text-lg leading-relaxed text-slate dark:text-manatee">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-4 text-lg leading-relaxed text-slate dark:text-manatee"
+            >
               If you could learn what to eat for YOUR health condition...
-            </p>
+            </motion.p>
 
             {/* Typing "Without" Statements */}
-            <div className="relative mb-4 min-h-[60px] lg:min-h-[50px]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="relative mb-4 min-h-[60px] lg:min-h-[50px]"
+            >
               <p className="text-lg leading-relaxed text-slate dark:text-manatee">
                 Without{" "}
                 <span className="inline-block min-w-[20px]">
@@ -90,20 +111,35 @@ const Hero = () => {
                   <span className="ml-0.5 inline-block w-0.5 h-5 bg-teal animate-pulse"></span>
                 </span>
               </p>
-            </div>
+            </motion.div>
 
             {/* Closing Question */}
-            <p className="mb-8 text-lg font-medium leading-relaxed text-black dark:text-white">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mb-8 text-lg font-medium leading-relaxed text-black dark:text-white"
+            >
               ...would that change everything?
-            </p>
+            </motion.p>
 
             {/* Bridge Copy */}
-            <p className="mb-6 text-center text-base leading-relaxed text-slate dark:text-manatee lg:text-left">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mb-6 text-center text-base leading-relaxed text-slate dark:text-manatee lg:text-left"
+            >
               Start with understanding what makes this different, then experience it yourself—free.
-            </p>
+            </motion.p>
 
             {/* CTAs - New Hierarchy */}
-            <div className="flex flex-col items-center gap-4 lg:items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-col items-center gap-4 lg:items-start"
+            >
               {/* PRIMARY CTA - Why This Is Different */}
               <div className="w-full sm:w-auto">
                 <Link
@@ -132,10 +168,15 @@ const Hero = () => {
                   Experience Eliana's $300 initial consultation in self-serve format—completely free
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Condition Tags */}
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="mt-10 flex flex-wrap items-center justify-center gap-2 lg:justify-start"
+            >
               <span className="text-xs text-waterloo">✓</span>
               <span className="text-sm text-slate dark:text-manatee">Type 2 Diabetes</span>
               <span className="text-xs text-waterloo">✓</span>
@@ -144,12 +185,17 @@ const Hero = () => {
               <span className="text-sm text-slate dark:text-manatee">PCOS</span>
               <span className="text-xs text-waterloo">✓</span>
               <span className="text-sm text-slate dark:text-manatee">Metabolic Health</span>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Column - Professional Photo */}
           <div className="flex flex-col items-center gap-8 lg:items-end">
-            <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
               <Image
                 src="/images/eliana-headshot.webp"
                 alt="Eliana Witchell, MSc, RD, CDE"
@@ -159,19 +205,29 @@ const Hero = () => {
                 priority
               />
               {/* Floating Credential Badge */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-white px-6 py-3 shadow-lg ring-1 ring-slate/10 dark:bg-charcoal">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="absolute -bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-white px-6 py-3 shadow-lg ring-1 ring-slate/10 dark:bg-charcoal"
+              >
                 <p className="text-center text-sm font-semibold text-teal">
                   MSc, RD, CDE
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Credentials Line */}
-            <p className="mt-4 max-w-md text-center text-sm leading-relaxed text-waterloo lg:text-right">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mt-4 max-w-md text-center text-sm leading-relaxed text-waterloo lg:text-right"
+            >
               Eliana Witchell, MSc, RD, CDE — Published researcher in diabetes remission
               and carbohydrate restriction (European Journal of Clinical Nutrition, 2023).
               Serving 600+ patients across military and civilian populations.
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>
