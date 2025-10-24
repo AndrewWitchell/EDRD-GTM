@@ -283,13 +283,18 @@ export default function WhyDifferentPage() {
           </p>
 
           <div className="flex flex-col items-center">
-            {/* Thinkific Product Card Widget */}
-            <div
-              className="w-full max-w-2xl"
-              dangerouslySetInnerHTML={{
-                __html: `<div class="thinkific-product-card" data-btn-txt="See How It Works First" data-btn-txt-color="#ffffff" data-btn-bg-color="#0D9488" data-card-type="card" data-link-type="landing_page" data-product="3441431" data-embed-version="0.0.2" data-card-txt-color="#7d7d7d" data-card-bg-color="#ffffff" data-store-url="https://eat-different-rd.thinkific.com/embeds/products/show"><div class="iframe-container"></div><script type="text/javascript">document.getElementById("thinkific-product-embed") || document.write('<script id="thinkific-product-embed" type="text/javascript" src="https://assets.thinkific.com/js/embeds/product-cards-client.min.js"><\\/script>');</script><noscript><a href="https://eat-different-rd.thinkific.com/courses/CAF-Why-You-Eat" target="_blank">See How It Works First</a></noscript></div>`
-              }}
-            />
+            <Link
+              href="/preview"
+              className="group inline-flex items-center justify-center rounded-full bg-gradient-to-r from-teal to-[#0a5f68] px-8 py-4 text-lg font-semibold text-white shadow-md transition-all duration-200 hover:scale-105 hover:shadow-lg"
+            >
+              See How It Works First
+              <svg className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+            <p className="mt-3 text-center text-sm text-waterloo">
+              Watch the first module free. No credit card required.
+            </p>
           </div>
         </section>
 
