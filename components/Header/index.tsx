@@ -114,7 +114,7 @@ const Header = () => {
           }`}
         >
           <nav>
-            <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-8">
+            <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
               {menuData.map((menuItem) => (
                 <li key={menuItem.id} className="group relative">
                   {menuItem.submenu ? (
@@ -127,7 +127,7 @@ const Header = () => {
                           );
                           setOpenSubDropdown(null);
                         }}
-                        className="flex w-full cursor-pointer items-center justify-between gap-2 text-sm font-medium text-slate transition-colors hover:text-teal dark:text-manatee dark:hover:text-teal xl:w-auto"
+                        className="flex w-full cursor-pointer items-center justify-between gap-1.5 text-base font-medium text-slate transition-colors hover:text-teal dark:text-manatee dark:hover:text-teal xl:w-auto"
                       >
                         {menuItem.title}
                         <svg
@@ -145,8 +145,8 @@ const Header = () => {
                       <ul
                         className={`${
                           openDropdown === menuItem.id
-                            ? "visible mt-4 opacity-100 xl:mt-0"
-                            : "invisible opacity-0"
+                            ? "block mt-4 opacity-100 xl:visible xl:mt-0 xl:opacity-100"
+                            : "hidden xl:block xl:invisible xl:opacity-0"
                         } transition-all duration-200 xl:absolute xl:left-0 xl:top-full xl:z-99999 xl:mt-2 xl:min-w-[240px] xl:rounded-xl xl:border xl:border-slate/10 xl:bg-white xl:p-2 xl:shadow-lg xl:dark:border-slate/10 xl:dark:bg-charcoal`}
                       >
                         {menuItem.submenu.map((subItem) => (
@@ -185,8 +185,8 @@ const Header = () => {
                                 <ul
                                   className={`${
                                     openSubDropdown === subItem.id
-                                      ? "visible ml-4 mt-2 opacity-100 xl:ml-0 xl:mt-0"
-                                      : "invisible opacity-0"
+                                      ? "block ml-4 mt-2 opacity-100 xl:visible xl:ml-0 xl:mt-0 xl:opacity-100"
+                                      : "hidden xl:block xl:invisible xl:opacity-0"
                                   } transition-all duration-200 xl:absolute xl:left-full xl:top-0 xl:z-99999 xl:ml-2 xl:min-w-[220px] xl:rounded-xl xl:border xl:border-slate/10 xl:bg-white xl:p-2 xl:shadow-lg xl:dark:border-slate/10 xl:dark:bg-charcoal`}
                                 >
                                   {subItem.submenu.map((deepItem) => (
@@ -216,7 +216,7 @@ const Header = () => {
                   ) : (
                     <Link
                       href={menuItem.path || "#"}
-                      className={`text-sm font-medium transition-colors ${
+                      className={`text-base font-medium transition-colors ${
                         pathUrl === menuItem.path
                           ? "text-teal"
                           : "text-slate hover:text-teal dark:text-manatee dark:hover:text-teal"
@@ -230,12 +230,12 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div className="mt-7 flex items-center gap-4 xl:mt-0">
+          <div className="mt-7 flex items-center gap-4 xl:ml-8 xl:mt-0">
             <ThemeToggler />
 
             <Link
               href="/initial-consult"
-              className="flex items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-r from-teal to-[#0a5f68] px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:scale-105 hover:shadow-md"
+              className="flex items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-r from-teal to-[#0a5f68] px-6 py-2.5 text-base font-semibold text-white shadow-sm transition-all duration-200 hover:scale-105 hover:shadow-md"
             >
               Start Your Free Initial Consult
             </Link>
