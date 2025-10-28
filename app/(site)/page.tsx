@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Brands from "@/components/Brands";
-import SocialProofBanner from "@/components/SocialProofBanner";
 import NavSection from "@/components/NavSection";
 import FinalCTA from "@/components/FinalCTA";
 import ScrollAnimation from "@/components/ScrollAnimation";
@@ -38,13 +37,8 @@ export default function Home() {
         <Brands />
       </ScrollAnimation>
 
-      {/* Social Proof Banner - Testimonials, Publications, Speaking */}
-      <ScrollAnimation delay={0.1}>
-        <SocialProofBanner />
-      </ScrollAnimation>
-
       {/* PATIENTS - D2C Hub: Complete Patient Journey */}
-      <ScrollAnimation delay={0.2}>
+      <ScrollAnimation delay={0.1}>
         <NavSection
           badge="For Patients"
           title="Start Your"
