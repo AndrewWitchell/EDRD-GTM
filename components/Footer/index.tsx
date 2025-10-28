@@ -219,15 +219,23 @@ const Footer = () => {
                     Get Started
                   </h4>
                   <p className="mb-4 w-[90%]">
-                    Watch the first module free and see if this evidence-based approach resonates with you before committing.
+                    Start with understanding what makes this different, then experience it yourself—free.
                   </p>
 
-                  <a
-                    href="/preview"
-                    className="inline-flex rounded-full bg-primary px-7.5 py-3 text-white duration-300 ease-in-out hover:bg-primaryho"
-                  >
-                    Watch Free Module
-                  </a>
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href="/about"
+                      className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-white duration-300 ease-in-out hover:bg-primaryho"
+                    >
+                      Why This Is Different
+                    </a>
+                    <a
+                      href="/initial-consult"
+                      className="inline-flex items-center justify-center rounded-full border-2 border-primary px-6 py-2.5 text-sm font-medium text-primary duration-300 ease-in-out hover:bg-primary hover:text-white dark:text-primary dark:hover:text-white"
+                    >
+                      Free Initial Consult
+                    </a>
+                  </div>
                 </motion.div>
               </div>
             </div>

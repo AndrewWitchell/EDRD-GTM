@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const FinalCTA = () => {
@@ -26,23 +27,29 @@ const FinalCTA = () => {
                 Ready to Take Control of Your Metabolic Health?
               </h2>
               <p className="mb-10 text-lg leading-relaxed text-white/90">
-                Book your free 30-minute consultation to learn how evidence-based
-                nutrition can transform your health.
+                Start with understanding what makes this different, then experience it yourself—free.
               </p>
 
-              {/* CTA Button */}
-              <div className="mb-10">
-                <a
-                  href="https://eatdifferentrd.janeapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              {/* CTA Buttons */}
+              <div className="mb-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                {/* PRIMARY CTA - Why This Is Different */}
+                <Link
+                  href="/about"
                   className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-teal shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl"
                 >
-                  Book Your Free Consultation
+                  Why This Is Different
                   <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </a>
+                </Link>
+
+                {/* SECONDARY CTA - Start Your Free Initial Consult */}
+                <Link
+                  href="/initial-consult"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-white px-8 py-4 text-base font-semibold text-white transition-all duration-200 hover:bg-white hover:text-teal"
+                >
+                  Start Your Free Initial Consult
+                </Link>
               </div>
 
               {/* Contact Methods */}
